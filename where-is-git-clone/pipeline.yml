@@ -10,5 +10,8 @@ jobs:
   public: true
   plan:
   - get: git-resource
+    trigger: true
   - task: pwd
     file: git-resource/sample-tasks/pwd.yml
+  - task: ls
+    file: git-resource/sample-tasks/ls.yml
