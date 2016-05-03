@@ -1,0 +1,14 @@
+---
+resources:
+- name: git-resource
+  type: git
+  source:
+    uri: https://github.com/cdavisafc/concourse-examples.git
+
+jobs:
+- name: job-do-something-with-git-repo
+  public: true
+  plan:
+  - get: git-resource
+  - task: pwd
+    file: git-resource/sample-tasks/pwd.yml
